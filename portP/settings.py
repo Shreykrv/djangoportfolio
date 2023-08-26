@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-3!t=(h_=84qt6azhrf=gpv=2lw89_&#q%6=%4oyjc&@pnbjw@5
 DEBUG = True
 
 # ALLOWED_HOSTS = ['127.0.0.1', 'portapp']
-ALLOWED_HOSTS = ['.vercel.app', 'now.sh']
+ALLOWED_HOSTS = ['.vercel.app','now.sh','127.0.0.1','localhost']
 
 
 # Application definition
@@ -78,20 +78,18 @@ WSGI_APPLICATION = 'portP.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'djongo',
-#         'NAME': 'mydb',
-#         'ENFORCE_SCHEMA': True,
-#         'CLIENT':{
-#             'host':'mongodb+srv://nsti:nsti123@cluster0.tu9holz.mongodb.net/?retryWrites=true&w=majority',
-#             'username':'nsti',
-#             'password':'nsti123',
-#             'authMechanism': 'SCRAM-SHA-1' 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'AhWlgRz2FFunk1kpixic',
+        'HOST':  'containers-us-west-63.railway.app',
+        'PORT': '6007', 
             
-#         }
-#     }
-# }
+        }
+    }
+
 
 
 # Password validation
@@ -139,5 +137,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 import os
+
 STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
